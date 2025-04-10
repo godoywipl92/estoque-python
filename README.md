@@ -1,66 +1,56 @@
-🧮 Sistema de Gerenciamento de Estoque (Python + SQLite)
-Este projeto é um sistema simples de gerenciamento de estoque feito em Python, utilizando banco de dados SQLite. Ele permite realizar operações básicas como adicionar, listar, atualizar e excluir produtos, tudo por meio de um menu interativo no terminal.
+# 📦 Sistema de Gerenciamento de Estoque
 
-🚀 Funcionalidades
-📦 Adicionar produto ao estoque
+Este é um projeto simples de gerenciamento de estoque feito em **Python** com uso de **SQLite3** para armazenamento dos dados.
 
-📋 Listar todos os produtos cadastrados
+## 🧠 Funcionalidades
 
-✏️ Atualizar informações de um produto
+- Adicionar produtos ao estoque
+- Listar todos os produtos
+- Atualizar informações de um produto
+- Remover produtos do estoque
+- Armazenamento persistente via banco de dados SQLite
+- Menu interativo com repetição até o usuário decidir sair
+- Tratamento de erros (ID inexistente, nomes duplicados, etc.)
 
-❌ Deletar um produto
+## 🗂 Estrutura do Projeto
 
-💾 Banco de dados criado automaticamente (SQLite)
+- `estoque.py`: Arquivo principal com todas as funções e menu interativo
+- `estoque.db`: Banco de dados gerado automaticamente na primeira execução
+- `README.md`: Este documento com explicações e instruções
 
-🔐 Tratamento de erros para entradas inválidas e IDs inexistentes
+## 🧪 Exemplos de Testes Realizados
 
-🧩 Código modularizado com funções separadas para cada operação
+1. **Adição de produto:**
+   - Nome: Teclado, Quantidade: 5, Preço: 49.90
+   - Resultado: Produto adicionado com sucesso
 
-🧩 Dificuldades encontradas e como foram resolvidas
+2. **Listagem:**
+   - Mostra todos os produtos adicionados com ID, nome, quantidade e preço
+
+3. **Atualização de produto:**
+   - Produto ID 1 alterado para: Nome: Teclado Gamer, Quantidade: 10, Preço: 89.90
+   - Resultado: Produto atualizado com sucesso
+
+4. **Remoção de produto:**
+   - Remoção do produto com ID 1
+   - Resultado: Produto removido com sucesso
+
+5. **Erros tratados:**
+   - Tentativa de excluir ID inexistente: mostra mensagem de erro
+   - Tentativa de adicionar produto com nome já existente: impede duplicata
+
+## 🧩 Dificuldades encontradas e como foram resolvidas
 Durante o desenvolvimento do sistema, o principal desafio foi garantir a integridade dos dados no banco SQLite, especialmente em relação à validação de entradas duplicadas e à manipulação de IDs inexistentes nas operações de atualização e exclusão. Para resolver isso, foi necessário implementar tratamento de exceções com try/except e validar os dados antes de cada operação sensível.
 
 Outro ponto importante foi estruturar o código de forma modular, separando cada funcionalidade em funções específicas para facilitar a manutenção e a legibilidade. Essa organização permitiu um fluxo de desenvolvimento mais claro e seguro, além de tornar o código mais escalável para futuras melhorias, como interface gráfica ou integração com APIs.
 
-🧪 Exemplos de testes realizados
-✅ Adição de produto
-Entrada:
+---
 
-makefile
-Copiar
-Editar
-Nome: Caneta  
-Preço: 2.50  
-Quantidade: 100  
-Resultado:
-Produto adicionado com sucesso e armazenado no banco de dados.
+## ✅ Como Executar
 
-📋 Listagem de produtos
-Resultado esperado:
+1. Instale o Python
+2. Baixe o repositório
+3. Execute o arquivo `estoque.py` com:
 
-yaml
-Copiar
-Editar
-ID: 1 | Nome: Caneta | Preço: R$ 2.5 | Quantidade: 100
-✏️ Atualização de produto
-Entrada:
-
-yaml
-Copiar
-Editar
-ID: 1  
-Novo nome: Caneta Azul  
-Novo preço: 3.00  
-Nova quantidade: 150  
-Resultado:
-Produto atualizado corretamente no banco de dados.
-
-❌ Exclusão de produto
-Entrada:
-
-makefile
-Copiar
-Editar
-ID: 1  
-Resultado:
-Produto deletado com sucesso.
-
+```bash
+python estoque.py
